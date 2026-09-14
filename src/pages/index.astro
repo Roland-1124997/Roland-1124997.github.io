@@ -1,22 +1,234 @@
 ---
+import "../styles/global.css";
 
+// @ts-ignore
+import GridPattern from "../components/gridPattern.vue";
+import Navigation from "../components/navigation.vue";
+import ActionButton from "../components/actionButton.vue";
 ---
 
-<html lang="en">
+<html lang="nl">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+
+		<link rel="icon" type="image/svg+xml" href="https://dashboard.roland-meijer.nl/icons/icon_192-blue.png" />
+		<link rel="icon" href="https://dashboard.roland-meijer.nl/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+
+		<meta name="description" content="Portfolio van Roland Meijer, Full-stack Software Developer gespecialiseerd in Vue, Nuxt, TypeScript, PHP en Laravel." />
+		<meta name="keywords" content="Roland Meijer, software developer, full-stack developer, web developer, Vue, Nuxt, TypeScript, PHP, Laravel, portfolio" />
+		<meta name="author" content="Roland Meijer" />
+		<meta name="robots" content="index, follow" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="nl_NL" />
+		<meta property="og:title" content="Roland Meijer — Full-stack Software Developer" />
+		<meta property="og:description" content="Portfolio van Roland Meijer, Full-stack Software Developer. Bekijk mijn projecten, vaardigheden en werkervaring." />
+		<meta property="og:url" content="https://roland-meijer.nl/" />
+		<meta property="og:site_name" content="Roland Meijer — Software Developer" />
+		<meta property="og:image" content="https://roland-meijer.nl/og-image.png" />
+		<meta property="og:image:alt" content="Portfolio van Roland Meijer — Full-stack Software Developer" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Roland Meijer — Full-stack Software Developer" />
+		<meta name="twitter:description" content="Portfolio van Roland Meijer, Full-stack Software Developer. Bekijk mijn projecten, vaardigheden en werkervaring." />
+		<meta name="twitter:image" content="https://roland-meijer.nl/og-image.png" />
+
+		<title>Roland Meijer - Full-stack Software Developer</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
-		<p>
-			Welcome to Astro! This is a simple starter project to help you get up and running quickly.
-		</p>
 
+	<body class="text-slate-900">
+		<Navigation />
 
+		<div class="fixed -mt-5 h-screen w-full -z-10 overflow-hidden">
+			<GridPattern class="pointer-events-none" />
+		</div>
+
+		<main class="mx-auto max-w-7xl px-4 md:px-6">
+			<section class="relative mb-24 overflow-hidden rounded-4xl px-6 py-16 md:px-12 md:py-24 xl:px-20">
+				<div id="home" class="relative z-10 max-w-4xl">
+					<h1 class="text-5xl font-extrabold leading-[0.95] text-blue-950 sm:text-6xl md:text-8xl">Ik bouw digitale producten die écht werken.</h1>
+					<h2 class="mt-8 font-semibold text-2xl text-blue-900">Roland Meijer · Full-stack Software Developer</h2>
+
+					<p class="mt-5 max-w-2xl text-lg leading-8 text-slate-700 md:text-xl">Die graag digitale producten bouwt die écht werken. Leergierig en praktisch ingesteld, met ervaring in Vue.js, Nuxt.js, TypeScript en Tailwind CSS. Ik werk graag aan gebruiksvriendelijke oplossingen en ontdek daarbij nieuwe technologieën.</p>
+
+					<div class="mt-8 flex flex-wrap gap-3">
+						<ActionButton to="#projecten" description="Bekijk mijn projecten" reverse={false} />
+						<ActionButton to="#contact" description="Neem contact op" reverse />
+					</div>
+				</div>
+			</section>
+
+			<section class="mb-24">
+				<div id="over-mij" class="">
+					<div>
+						<p class="font-semibold text-blue-900">01 · Over mij</p>
+						<h2 class="mt-2 text-4xl font-extrabold text-blue-950">Wie ben ik?</h2>
+					</div>
+
+					<div class="max-w-3xl mt-5 space-y-5 text-lg leading-8 text-slate-700">
+						<p>Ik ben behulpzaam, leergierig en praktisch ingesteld. Ik werk graag met nieuwe technieken, ben kritisch en zorgvuldig en denk creatief mee over oplossingen. Ik kan goed zelfstandig werken, maar werk ook graag samen en help anderen waar nodig. Ik leer het beste door voorbeelden en zelf te oefenen. Ik werk prettig in een informele en gestructureerde omgeving en vind werk-privébalans en stabiliteit belangrijk. Mijn interesses liggen vooral bij programmeren, fullstack development en cybersecurity vind ik zeer interessant. Ik wil graag zowel aan de front-end als back-end bijdragen.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="projecten" class="mb-24">
+				<div class="mb-10">
+					<p class="font-semibold text-blue-900">02 · Projecten</p>
+					<h2 class="mt-2 text-4xl font-extrabold text-blue-950 md:text-5xl">Waar ik aan werk</h2>
+
+					<p class="mt-4 max-w-2xl text-lg text-slate-600">Een selectie van projecten waarin ik verschillende kanten van softwareontwikkeling heb toegepast.</p>
+				</div>
+
+				<div class="grid gap-6 md:grid-cols-2">
+					<article class="rounded-3xl flex-col flex-1 border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+						<div class="mb-6 flex items-start justify-between gap-4">
+							<div>
+								<p class="text-sm font-semibold text-blue-900">Persoonlijk project</p>
+								<h3 class="mt-1 text-2xl font-bold text-blue-950">Insights</h3>
+							</div>
+
+							<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold"> Full-stack </span>
+						</div>
+
+						<p class="leading-7 text-slate-600">Een eigen CMS-achtige omgeving voor mijn portfolio, waarmee ik mijn projecten, vaardigheden en werkervaring kan beheren. Daarnaast biedt het inzicht tot bezoekersstatistieken en interacties.</p>
+
+						<div class="mt-6 flex flex-wrap gap-2">
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Nuxt</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Cms</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">TypeScript</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Tiptap</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Analytics</span>
+						</div>
+
+						<div class="flex flex-wrap gap-3">
+							<a href="https://dashboard.roland-meijer.nl" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-sm underline underline-offset-4 font-semibold text-blue-600 transition hover:text-blue-700 focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"> Bekijk website </a>
+							<a href="https://github.com/Roland-1124997/Insights-dashboard" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-sm font-semibold text-blue-600 transition hover:text-blue-700 focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"> Bekijk Github </a>
+						</div>
+					</article>
+
+					<article class="rounded-3xl flex-col flex-1 border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+						<div class="mb-6 flex items-start justify-between gap-4">
+							<div>
+								<p class="text-sm font-semibold text-blue-900">Persoonlijk project</p>
+								<h3 class="mt-1 text-2xl font-bold text-blue-950">Lumora</h3>
+							</div>
+
+							<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold"> Full-stack </span>
+						</div>
+
+						<p class="leading-7 text-slate-600">Lumora is een webapplicatie waarmee gebruikers eenvoudig foto’s kunnen uploaden en hierop kunnen reageren. Het platform biedt een makkelijke manier om visuele content te delen en interactie aan te gaan met anderen.</p>
+
+						<div class="mt-6 flex flex-wrap gap-2">
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Nuxt</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Filestorage</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">TypeScript</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Supabase</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">PWA</span>
+						</div>
+
+						<div class="flex flex-wrap gap-3">
+							<a href="https://lumora.roland-meijer.nl" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block underline underline-offset-4 text-sm font-semibold text-blue-600 transition hover:text-blue-700 focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"> Bekijk website </a>
+							<a href="https://github.com/Roland-1124997/Lumora" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block text-sm font-semibold text-blue-600 transition hover:text-blue-700 focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"> Bekijk Github </a>
+						</div>
+					</article>
+
+					<article class="rounded-3xl flex-col flex-1 border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+						<div class="mb-6 flex items-start justify-between gap-4">
+							<div>
+								<p class="text-sm font-semibold text-blue-900">Persoonlijk project</p>
+								<h3 class="mt-1 text-2xl font-bold text-blue-950">Secure chat-applicatie</h3>
+							</div>
+
+							<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold"> Full-stack </span>
+						</div>
+
+						<p class="leading-7 text-slate-600">Een veilige chat-applicatie met end-to-end encryptie op basis van passkeys. Gebruikers kunnen eenvoudig een account aanmaken, inloggen en chatten met anderen.</p>
+
+						<div class="mt-6 flex flex-wrap gap-2">
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Nuxt</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">E2e encryptie </span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">TypeScript</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Passkeys</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Pinia </span>
+						</div>
+					</article>
+
+					<article class="rounded-3xl flex-col flex-1 border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+						<div class="mb-6 flex items-start justify-between gap-4">
+							<div class="mb-6">
+								<p class="text-sm font-semibold text-blue-900">Schoolproject</p>
+								<h3 class="mt-1 text-2xl font-bold text-blue-950">Werkplaats 4 - Pwa</h3>
+							</div>
+
+							<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold"> Web-app </span>
+						</div>
+
+						<p class="leading-7 text-slate-600">een Progressive Web App (PWA) waarmee studenten eenvoudig afstudeerprojecten van bedrijven kunnen ontdekken. Gebruikers kunnen beschikbare projecten bekijken, details inzien, projecten delen via een link en direct contact opnemen met bedrijven via hun e-mailapplicatie</p>
+
+						<div class="mt-6 flex flex-wrap gap-2">
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Offline-capable</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">React</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Vite</span>
+							<span class="rounded-lg bg-slate-100 px-3 py-1 text-sm">Pwa</span>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="mb-24">
+				<div id="vaardigheden" class="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
+					<div>
+						<p class="font-semibold text-blue-900">03 · Vaardigheden</p>
+						<h2 class="mt-2 text-4xl font-extrabold text-blue-950">Wat ik meebreng</h2>
+					</div>
+
+					<div class="grid gap-4 sm:grid-cols-2">
+						<div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-200">
+							<h3 class="font-bold text-blue-950">Front-end</h3>
+							<p class="mt-2 text-slate-600">Vue.js, Nuxt.js, TypeScript, Tailwind CSS, Pinia</p>
+						</div>
+
+						<div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-200">
+							<h3 class="font-bold text-blue-950">Back-end</h3>
+							<p class="mt-2 text-slate-600">API's, PHP, Laravel, Nitro en databases, Supabase</p>
+						</div>
+
+						<div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-200">
+							<h3 class="font-bold text-blue-950">Development</h3>
+							<p class="mt-2 text-slate-600">Git, PWA's, Agile, Teamwork</p>
+						</div>
+
+						<div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-200">
+							<h3 class="font-bold text-blue-950">Interesses</h3>
+							<p class="mt-2 text-slate-600">Full-stack development, cybersecurity en nieuwe technologie</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CONTACT -->
+			<section class="mb-10 overflow-hidden rounded-4xl bg-blue-900 px-8 py-14 text-white md:px-16 md:py-20">
+				<div id="contact" class="grid gap-10">
+					<div>
+						<p class="font-semibold text-blue-200">04 · Contact</p>
+						<h2 class="mt-2 text-4xl font-extrabold md:text-6xl">Laten we kennismaken.</h2>
+						<p class="mt-6 max-w-xl text-lg leading-8 text-blue-100">Heb je een vraag, interessant project of ben je op zoek naar een enthousiaste software developer? Neem gerust contact met mij op.</p>
+					</div>
+
+					<div class="grid gap-3 grid-cols-2 text-blue-50">
+						<a href="mailto:contact@roland-meijer.nl" class="block text-lg font-semibold transition hover:text-blue-200"> contact@roland-meijer.nl </a>
+						<a href="https://www.linkedin.com/in/roland-meijer-07bb97198" target="_blank" rel="noopener noreferrer" class="block text-lg font-semibold transition hover:text-blue-200"> LinkedIn</a>
+						<a href="tel:+31638305453" target="_blank" rel="noopener noreferrer" class="block text-lg font-semibold transition hover:text-blue-200"> +31 6 38305453 </a>
+						<a href="https://github.com/Roland-1124997" target="_blank" rel="noopener noreferrer" class="block text-lg font-semibold transition hover:text-blue-200"> GitHub</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="mx-auto max-w-7xl px-6 py-8 text-center text-sm text-slate-500">
+			<a href="https://roland-meijer.nl" target="_blank" class="text-blue-800 font-semibold"> Roland Meijer </a> · Software Developer
+		</footer>
 	</body>
 </html>
