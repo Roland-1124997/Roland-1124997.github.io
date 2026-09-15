@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-
-	import { computed, ref } from "vue"
-
+	import { computed, ref } from "vue";
 
 	const { squares, width, height, squaresClassName, className } = defineProps({
 		className: {
@@ -31,38 +29,26 @@
 
 	const totalSquares = computed(() => horizontal.value * vertical.value);
 
-	const hoveredSquare = ref<number | null>(null);
-
 	const gridWidth = computed(() => width * horizontal.value);
 	const gridHeight = computed(() => height * vertical.value);
 
-	function getX(index: number) {
+	const getX = (index: number) => {
 		return (index % horizontal.value) * width;
-	}
+	};
 
-	function getY(index: number) {
+	const getY = (index: number) => {
 		return Math.floor(index / horizontal.value) * height;
-	}
+	};
 
 	const svgClass = computed(() => ["absolute z-0 inset-0 h-screen w-screen border border-gray-100", className]);
 
-	function getRectClass(index: number) {
-		return ["stroke-gray-100 transition-all z-0 duration-100 ease-in-out not-[&:hover]:duration-1000", hoveredSquare.value === index ? "fill-transparent" : "fill-transparent", squaresClassName];
-	}
-
-	function handleMouseEnter(index: number) {
-		hoveredSquare.value = index;
-	}
-
-	function handleMouseLeave() {
-		hoveredSquare.value = null;
-	}
+	const getRectClass = (index: number) => {
+		return ["stroke-gray-100 transition-all z-0 duration-100 ease-in-out not-[&:hover]:duration-1000 fill-transparent", squaresClassName];
+	};
 </script>
 
 <template>
 	<svg :width="gridWidth" :height="gridHeight" :class="svgClass">
-		<rect v-for="(_, index) in totalSquares" :key="index" :x="getX(index)" :y="getY(index)" :width="width"
-			:height="height" :class="getRectClass(index)" @mouseenter="handleMouseEnter(index)"
-			@mouseleave="handleMouseLeave" />
+		<rect v-for="(_, index) in totalSquares" :key="index" :x="getX(index)" :y="getY(index)" :width="width" :height="height" :class="getRectClass(index)" />
 	</svg>
 </template>
